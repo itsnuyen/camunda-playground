@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:zeebe="http://camunda.org/schema/zeebe/1.0" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_0atzokj" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.40.1" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.7.0">
+  <bpmn:process id="Process_JobWorker" name="Sample Job Worker" isExecutable="true">
+    <bpmn:extensionElements>
+      <zeebe:versionTag value="0.0.2" />
+    </bpmn:extensionElements>
+    <bpmn:endEvent id="Event_1brsskq">
+      <bpmn:incoming>Flow_1a20kzp</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_1a20kzp" sourceRef="Activity_SampleWorker" targetRef="Event_1brsskq" />
+    <bpmn:sequenceFlow id="Flow_1ngg1pr" sourceRef="StartEvent_1" targetRef="Activity_SampleWorker" />
+    <bpmn:startEvent id="StartEvent_1">
+      <bpmn:outgoing>Flow_1ngg1pr</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:serviceTask id="Activity_SampleWorker" name="Sample Worker">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="sample-worker-with-return-value" />
+        <zeebe:taskHeaders>
+          <zeebe:header key="myCustomType" value="route66" />
+        </zeebe:taskHeaders>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1ngg1pr</bpmn:incoming>
+      <bpmn:outgoing>Flow_1a20kzp</bpmn:outgoing>
+    </bpmn:serviceTask>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_JobWorker">
+      <bpmndi:BPMNShape id="Activity_00bh5g7_di" bpmnElement="Activity_SampleWorker">
+        <dc:Bounds x="250" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="StartEvent_1_di" bpmnElement="StartEvent_1">
+        <dc:Bounds x="152" y="102" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1brsskq_di" bpmnElement="Event_1brsskq">
+        <dc:Bounds x="402" y="102" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_1ngg1pr_di" bpmnElement="Flow_1ngg1pr">
+        <di:waypoint x="188" y="120" />
+        <di:waypoint x="250" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1a20kzp_di" bpmnElement="Flow_1a20kzp">
+        <di:waypoint x="350" y="120" />
+        <di:waypoint x="402" y="120" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

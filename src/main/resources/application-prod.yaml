@@ -1,0 +1,16 @@
+# https://docs.camunda.io/docs/apis-tools/spring-zeebe-sdk/getting-started/
+# https://docs.camunda.io/docs/apis-tools/spring-zeebe-sdk/configuration/
+
+camunda:
+  client:
+    mode: saas
+    auth:
+      client-id: what an id 1234567890
+      client-secret: so much secret very secure 1234567890
+    cloud:
+      cluster-id: blabla-aaaa-bbbb-cccc-xxxxxxxxxxxx
+      region: bru-2
+
+
+server:
+  port: 8087

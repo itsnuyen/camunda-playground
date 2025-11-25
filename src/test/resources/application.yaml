@@ -1,0 +1,42 @@
+camunda:
+  client:
+    mode: selfmanaged
+    grpc-address: http://localhost:26500
+    rest-address: http://localhost:8080
+    prefer-rest-over-grpc: false
+    auth:
+      method: basic
+      username: demo
+      password: demo
+    process-test:
+      # Change the version of the Camunda Docker image
+      camunda-docker-image-version: 8.8.0
+      # Change the Camunda Docker image
+      camunda-docker-image-name: camunda/camunda
+      # Set additional Camunda environment variables
+      camunda-env-vars:
+        env_1: value_1
+      # Expose additional Camunda ports
+      camunda-exposed-ports:
+        - 9000
+      # Change the Camunda logger name
+      camunda-logger-name: tc.camunda
+      # Enable Connectors
+      connectors-enabled: true
+      # Change the Connectors Docker image
+      connectors-docker-image-name: camunda/connectors
+      # Change version of the Connectors Docker image
+      connectors-docker-image-version: 8.8.0
+      # Set additional Connectors environment variables
+      connectors-env-vars:
+        env_1: value_1
+      # Set Connectors secrets
+      connectors-secrets:
+        secret_1: value_1
+      # Expose additional Connectors ports
+      connectors-exposed-ports:
+        - 9010
+      # Change the Connectors logger name
+      connectors-logger-name: tc.connectors
+server:
+  port: 8099

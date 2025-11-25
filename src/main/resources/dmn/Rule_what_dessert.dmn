@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_0e9my02" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.36.1" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.7.0">
+  <decision id="decide-what-dessert-1pb23n9" name="Decide what dessert">
+    <decisionTable id="DecisionTable_0wlfirv" hitPolicy="FIRST">
+      <input id="Input_1" label="temperatur">
+        <inputExpression id="InputExpression_1" typeRef="number">
+          <text>temperatur</text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" label="dessert" name="dessert" typeRef="string" />
+      <rule id="DecisionRule_1gj9kih">
+        <inputEntry id="UnaryTests_12klvio">
+          <text>&gt; 22</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1bsyx9c">
+          <text>"icecream"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1v6w019">
+        <inputEntry id="UnaryTests_0qcxikn">
+          <text>[1..22]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_03fdhyg">
+          <text>"cake"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1b4oc8t">
+        <inputEntry id="UnaryTests_1iztlv3">
+          <text>&lt;=0</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0vkjard">
+          <text>"hotchocolate"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="decide-what-dessert-1pb23n9">
+        <dc:Bounds height="80" width="180" x="160" y="100" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>

@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: nuyen-demo
+#  main:
+#    allow-bean-definition-overriding: true
+logging:
+  level:
+    io:
+      camunda: DEBUG
+#      grpc: DEBUG
