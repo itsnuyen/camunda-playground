@@ -3,7 +3,7 @@ tasklist:
   client:
     profile: simple
     enabled: true
-    base-url: http://localhost:8082
+    base-url: http://localhost:8080
     session-timeout: PT10M
     username: demo
     password: demo
@@ -14,8 +14,8 @@ camunda:
     mode: selfmanaged
     zeebe:
       grpc-address: http://localhost:26500
-      rest-address: http://localhost:8088
-      prefer-rest-over-grpc: false
+      rest-address: http://localhost:8080
+      prefer-rest-over-grpc: true
       audience: zeebe-api
 
 
